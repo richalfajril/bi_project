@@ -1,3 +1,4 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const First = () => {
@@ -5,9 +6,9 @@ const First = () => {
     return (
         <>
             <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login sekarang!</h1>
+                        <h1 className="text-5xl font-bold">Dummy Project</h1>
                         <p className="py-6">Ini adalah protoype uji coba project Bank Informasi</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -30,7 +31,7 @@ const First = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-secondary" onClick={() => navigate("/dashboard")}>
+                                <button className="btn btn-accent" onClick={() => navigate("/dashboard")}>
                                     Masuk
                                 </button>
                             </div>
