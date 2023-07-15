@@ -5,7 +5,7 @@ const First = () => {
     const navigate = useNavigate();
     return (
         <>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen bg-secondary">
                 <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Dummy Project</h1>
@@ -31,7 +31,7 @@ const First = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-accent" onClick={() => navigate("/dashboard")}>
+                                <button className="btn btn-primary" onClick={() => navigate("/dashboard")}>
                                     Masuk
                                 </button>
                             </div>
