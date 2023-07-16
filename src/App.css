@@ -1,0 +1,4 @@
+.table.table-xs.table-pin-rows tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}

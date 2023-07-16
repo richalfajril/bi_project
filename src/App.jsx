@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./Pages/Home";
 import Dashboard from "./Pages/Dashboard";
 import FormPage from "./Pages/FormPage";
+import TableView from "./Pages/TableView";
 
 const App = () => {
     return (
@@ -11,6 +12,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/dashboard/formpage" element={<FormPage />} />
+                <Route path="/dashboard/tableview" element={<TableView />} />
             </Routes>
         </Router>
     );

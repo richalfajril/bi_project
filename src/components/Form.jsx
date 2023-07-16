@@ -18,14 +18,14 @@ const Form = () => {
     return (
         <>
             <Navbar />
-            <div className=" bg-secondary py-5 px-5">
+            <div className="min-h-screen bg-secondary py-5 px-5">
                 <div className="container">
                     <div className="card bg-white flex-card shadow-xl px-10 py-5 mb-5">
-                        <h1 className="text-center text-2xl font-bold mb-10">
+                        <h1 className="text-center text-2xl font-bold mb-5">
                             <i className="icon-user"></i>Identitas Pengirim
                         </h1>
-                        <div className="join">
-                            <div className="form-control w-full mb-3 mr-3">
+                        <div className="flex flex-wrap mb-5">
+                            <div className="self-start form-control w-full px-1 lg:w-1/2">
                                 <label className="label">
                                     <span className="label-text font-bold">Nama</span>
                                 </label>
@@ -35,7 +35,7 @@ const Form = () => {
                                     className="input input-sm input-bordered max-w-full bg-slate-100"
                                 />
                             </div>
-                            <div className="form-control w-full mb-3 ml-3">
+                            <div className="form-control w-full px-1 lg:w-1/2">
                                 <label className="label">
                                     <span className="label-text font-bold">Nomor Identitas</span>
                                 </label>
@@ -45,9 +45,7 @@ const Form = () => {
                                     className="input input-sm input-bordered max-w-full bg-slate-100"
                                 />
                             </div>
-                        </div>
-                        <div className="join">
-                            <div className="form-control w-full mb-3 mr-3">
+                            <div className="form-control w-full px-1 lg:w-1/2">
                                 <label className="label">
                                     <span className="label-text font-bold">Fakultas</span>
                                 </label>
@@ -57,7 +55,7 @@ const Form = () => {
                                     className="input input-sm input-bordered max-w-full bg-slate-100"
                                 />
                             </div>
-                            <div className="form-control w-full mb-3 ml-3">
+                            <div className="form-control w-full px-1 lg:w-1/2">
                                 <label className="label">
                                     <span className="label-text font-bold">Nomor HP</span>
                                 </label>
@@ -70,7 +68,7 @@ const Form = () => {
                         </div>
                     </div>
                     <div className="flex-col card shadow-xl bg-white rounded-md px-10 py-5">
-                        <div className="form-control w-full mb-5">
+                        <div className="form-control w-full px-1 mb-5">
                             <label className="label">
                                 <span className="label-text font-bold">Judul</span>
                             </label>
@@ -80,7 +78,7 @@ const Form = () => {
                                 className="input input-md input-bordered w-full"
                             />
                         </div>
-                        <div className="form-control mb-5">
+                        <div className="form-control px-1 mb-5">
                             <label className="label">
                                 <span className="label-text font-bold">Isi</span>
                             </label>
@@ -105,7 +103,7 @@ const Form = () => {
                                 <div className="flex" style={{ justifyContent: "flex-end" }}>
                                     <div className="flex">
                                         <button className="btn btn-warning mx-1" style={{ color: "white" }}>
-                                            Save
+                                            Simpan
                                         </button>
                                     </div>
                                     <div className="flex">
@@ -152,7 +150,7 @@ const Form = () => {
                     </svg>
                     <span>Tulisan Anda sudah terkirim, Terima Kasih!</span>
                     <button className="btn btn-neutral" onClick={handleClose}>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </Modal>
