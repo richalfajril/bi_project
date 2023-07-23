@@ -34,7 +34,7 @@ const Navbar = () => {
                                 <a onClick={() => navigate("/dashboard")}>Dashboard</a>
                             </li>
                             <li>
-                                <a>Tabungan</a>
+                                <a onClick={() => navigate("/dashboard/tableview")}>Tabungan</a>
                             </li>
                         </ul>
                     </div>

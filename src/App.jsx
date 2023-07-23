@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Dashboard from "./Pages/Dashboard";
 import FormPage from "./Pages/FormPage";
 import TableView from "./Pages/TableView";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const App = () => {
     return (
