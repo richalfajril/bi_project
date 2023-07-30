@@ -2,61 +2,43 @@
 import ketikImage from "../assets/images/ketik.jpg";
 import savingsImage from "../assets/images/savings.png";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import Navbar from "./Navbar";
 
-const Second = () => {
+function Second() {
   const navigate = useNavigate();
-
-  const [users, setUsers] = useState([]);
-  //useEffect hook
-  useEffect(() => {
-    //panggil method "fetchData"
-    fectData();
-  }, []);
-
-  const fectData = async () => {
-    //fetching
-    const response = await axios.get(
-      "https://pink-impossible-panther.cyclic.app/users"
-    );
-    //get response data
-    const data = await response.data.data;
-
-    //assign response data to state "posts"
-    setUsers(data);
-  };
-
   return (
     <>
-      {users.map((user, index) => (
-        <h2 key={index}> {user.name}</h2>
-      ))}
-      <div className="container">
-        <div className="flex flex-col items-center justify-center pt-36 sm:flex-row">
-          <div className="card w-100 bg-base-100 shadow-xl px-4">
-            <figure className="px-10 pt-10">
+      <div className="min-h-screen bg-secondary">
+        <Navbar />
+        <div className="flex flex-col items-center justify-center lg:flex-row lg:pt-32">
+          <div className="card w-100 bg-base-100 shadow-xl mx-10 my-10 hover:-translate-y-1 hover:scale-105 transition duration-300">
+            <figure className="">
               <img
                 src={ketikImage}
                 alt="Shoes"
-                className="rounded-xl"
+                className=""
                 style={{ height: "300px", width: "500px", objectFit: "cover" }}
               />
             </figure>
             <div className="card-body items-center text-center">
-              <h2 className="card-title">Menabung Artikel</h2>
+              <h2 className="card-title">Kirim Artikel</h2>
               <p>Ayo tulis dan kirimkan artikelmu melalui form ini!</p>
               <div className="card-actions">
-                <button className="btn btn-accent mt-5">Tulis Sekarang!</button>
+                <button
+                  className="btn btn-primary mt-5"
+                  onClick={() => navigate("/dashboard/formpage")}
+                >
+                  Tulis Sekarang!
+                </button>
               </div>
             </div>
           </div>
-          <div className="card w-100 bg-base-100 shadow-xl px-4">
-            <figure className="px-10 pt-10">
+          <div className="card w-100 bg-base-100 shadow-xl mx-10 my-10 hover:-translate-y-1 hover:scale-105 transition duration-300">
+            <figure className="">
               <img
                 src={savingsImage}
                 alt="Shoes"
-                className="rounded-xl"
+                className=""
                 style={{ height: "300px", width: "500px", objectFit: "cover" }}
               />
             </figure>
@@ -66,19 +48,19 @@ const Second = () => {
                 Kamu juga dapat melihat hasil tabungan artikel kamu di sini!
               </p>
               <div className="card-actions">
-                <button className="btn btn-accent mt-5">Lihat Tabungan</button>
+                <button
+                  className="btn btn-neutral mt-5"
+                  onClick={() => navigate("/dashboard/tableview")}
+                >
+                  Lihat Tabungan
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center mt-16">
-        <button className="btn btn-secondary" onClick={() => navigate("/")}>
-          Keluar
-        </button>
-      </div>
     </>
   );
-};
+}
 
 export default Second;
