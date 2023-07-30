@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ketikImage from "../assets/images/ketik.jpg";
 import savingsImage from "../assets/images/savings.png";
 import { useNavigate } from "react-router-dom";
