@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import avatar from "../assets/images/avatar.png";
 import logo from "../assets/images/logo.png";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Navbar = () => {
     const navigate = useNavigate();
+    const [name, setName] = useState([]);
+
+    //define method
+    const fetchDataPosts = async () => {
+        //fetch data from API with Axios
+        await axios.get("https://mauve-katydid-toga.cyclic.app/api/v1/users/24040119120017").then((response) => {
+            //assign response data to state "posts"
+            setName(response.data[0].name);
+            // setName(response.data[0].name);
+        });
+    };
+    //run hook useEffect
+    useEffect(() => {
+        //call method "fetchDataPosts"
+        fetchDataPosts();
+    }, []);
     return (
         <>
             <div className="navbar bg-primary px-5">
@@ -31,10 +48,10 @@ const Navbar = () => {
                             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                         >
                             <li>
-                                <a onClick={() => navigate("/dashboard")}>Dashboard</a>
+                                <a onClick={() => navigate("/dashboard-user")}>Dashboard</a>
                             </li>
                             <li>
-                                <a onClick={() => navigate("/dashboard/tableview")}>Tabungan</a>
+                                <a onClick={() => navigate("/dashboard-user/tableview")}>Tabungan</a>
                             </li>
                         </ul>
                     </div>
@@ -46,7 +63,10 @@ const Navbar = () => {
                     </a>
                 </div>
                 <div className="navbar-end">
-                    <div className="dropdown dropdown-end">
+                    <div className="hidden md:block text-white font-bold px-3">
+                        <h2>{name}</h2>
+                    </div>
+                    <div className="dropdown dropdown-end flex">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img src={avatar} />

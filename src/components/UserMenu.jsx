@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ketikImage from "../assets/images/ketik.jpg";
 import savingsImage from "../assets/images/savings.png";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
-function Second() {
+function UserMenu() {
     const navigate = useNavigate();
+
     return (
         <>
-            <div className="min-h-screen bg-secondary">
+            <div className="bg-secondary">
                 <Navbar />
-                <div className="flex flex-col items-center justify-center lg:flex-row lg:pt-32">
-                    <div className="card w-100 bg-base-100 shadow-xl mx-10 my-10 hover:-translate-y-1 hover:scale-105 transition duration-300">
+                <div className="min-h-screen flex flex-col items-center justify-center lg:flex-row">
+                    <div className="card w-100 bg-base-100 shadow-xl mx-5 my-5 hover:-translate-y-1 hover:scale-105 transition duration-300">
                         <figure className="">
                             <img
                                 src={ketikImage}
@@ -26,14 +27,14 @@ function Second() {
                             <div className="card-actions">
                                 <button
                                     className="btn btn-primary mt-5"
-                                    onClick={() => navigate("/dashboard/formpage")}
+                                    onClick={() => navigate("/dashboard-user/formpage")}
                                 >
                                     Tulis Sekarang!
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div className="card w-100 bg-base-100 shadow-xl mx-10 my-10 hover:-translate-y-1 hover:scale-105 transition duration-300">
+                    <div className="card w-100 bg-base-100 shadow-xl mx-5 my-5 hover:-translate-y-1 hover:scale-105 transition duration-300">
                         <figure className="">
                             <img
                                 src={savingsImage}
@@ -48,7 +49,7 @@ function Second() {
                             <div className="card-actions">
                                 <button
                                     className="btn btn-neutral mt-5"
-                                    onClick={() => navigate("/dashboard/tableview")}
+                                    onClick={() => navigate("/dashboard-user/tableview")}
                                 >
                                     Lihat Tabungan
                                 </button>
@@ -61,4 +62,4 @@ function Second() {
     );
 }
 
-export default Second;
+export default UserMenu;

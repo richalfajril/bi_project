@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import backgroundImage from "../assets/images/wp1.jpg";
 
-function First() {
+function Login() {
     const navigate = useNavigate();
+
     return (
         <>
             <div
@@ -50,7 +51,7 @@ function First() {
                                     </label>
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn btn-primary" onClick={() => navigate("/dashboard")}>
+                                    <button className="btn btn-primary" onClick={() => navigate("/dashboard-user")}>
                                         Masuk
                                     </button>
                                 </div>
@@ -63,4 +64,4 @@ function First() {
     );
 }
 
-export default First;
+export default Login;

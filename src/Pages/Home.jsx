@@ -1,7 +1,7 @@
-import First from "../components/First";
+import Login from "../components/Login";
 
 const Home = () => {
-    return <First />;
+    return <Login />;
 };
 
 export default Home;

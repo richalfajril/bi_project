@@ -2,10 +2,13 @@ import React from "react";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Form = () => {
     const [showAlert, setShowAlert] = useState(false);
+    const [name, setName] = useState([]);
+    const [faculty, setFaculty] = useState([]);
+    const [nim, setNim] = useState([]);
 
     const handleClick = () => {
         setShowAlert(true);
@@ -15,11 +18,26 @@ const Form = () => {
         setShowAlert(false);
     };
     const navigate = useNavigate();
+
+    const fetchDataPosts = async () => {
+        //fetch data from API with Axios
+        await axios.get("https://mauve-katydid-toga.cyclic.app/api/v1/users/24040119120017").then((response) => {
+            //assign response data to state "posts"
+            setName(response.data[0].name);
+            // setName(response.data[0].name);
+        });
+    };
+    //run hook useEffect
+    useEffect(() => {
+        //call method "fetchDataPosts"
+        fetchDataPosts();
+    }, []);
+
     return (
         <>
             <Navbar />
-            <div className="min-h-screen bg-secondary py-5 px-5">
-                <div className="container">
+            <div className="bg-secondary">
+                <div className="min-h-screen container py-5 px-5">
                     <div className="card bg-white flex-card shadow-xl px-10 py-5 mb-5">
                         <h1 className="text-center text-2xl font-bold mb-5">
                             <i className="icon-user"></i>Identitas Pengirim
@@ -33,6 +51,7 @@ const Form = () => {
                                     type="text"
                                     placeholder="Nama"
                                     className="input input-sm input-bordered max-w-full bg-slate-100"
+                                    disabled
                                 />
                             </div>
                             <div className="form-control w-full px-1 lg:w-1/2">
@@ -43,6 +62,7 @@ const Form = () => {
                                     type="text"
                                     placeholder="Nomor Identitas"
                                     className="input input-sm input-bordered max-w-full bg-slate-100"
+                                    disabled
                                 />
                             </div>
                             <div className="form-control w-full px-1 lg:w-1/2">
@@ -53,6 +73,7 @@ const Form = () => {
                                     type="text"
                                     placeholder="Fakultas"
                                     className="input input-sm input-bordered max-w-full bg-slate-100"
+                                    disabled
                                 />
                             </div>
                             <div className="form-control w-full px-1 lg:w-1/2">
@@ -63,6 +84,7 @@ const Form = () => {
                                     type="text"
                                     placeholder="Nomor HP"
                                     className="input input-sm input-bordered max-w-full bg-slate-100"
+                                    disabled
                                 />
                             </div>
                         </div>
@@ -94,7 +116,7 @@ const Form = () => {
                             <div className="container">
                                 <button
                                     className="btn btn-outline btn-error mx-1 text-end"
-                                    onClick={() => navigate("/dashboard")}
+                                    onClick={() => navigate("/dashboard-user")}
                                 >
                                     Kembali
                                 </button>
